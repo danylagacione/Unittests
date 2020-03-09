@@ -5,7 +5,8 @@ from unittest.mock import Mock, patch, call, MagicMock
 
 from run import consulta_api_viacep
 
-class TestMock (unittest.TestCase):
+
+class TestMock(unittest.TestCase):
 
 
     @patch('run.input')
@@ -24,9 +25,6 @@ class TestMock (unittest.TestCase):
         mock_print.return_value = json
 
         mock_print.assert_not_called()
-
-if __name__ == "__main__":
-    unittest.main()
 
 
 
