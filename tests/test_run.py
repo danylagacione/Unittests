@@ -11,8 +11,11 @@ class TestMock(unittest.TestCase):
 
     @patch('run.input')
     def test_input(self,  mock_input):
+        #Arrange, comportamento que o mock deve ter
         mock_input.return_value ='89037530'
+        #Actions
         consulta_api_viacep()
+        #Acssertions
         mock_input.side_effects = ['89037530', '89037520']
         mock_input.assert_called_once_with('Informe o cep para consulta: ')
 
